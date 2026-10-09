@@ -1,14 +1,34 @@
-\documentclass{recipebook}
+\documentclass[11pt,a4paper,oneside]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{microtype}
+
+% --- xcookybook Paket laden ---
+\usepackage{xcookybooky}
+\usepackage{booktabs}
+\makeatletter
+\renewcommand{\step}{%
+    \stepcounter{step}%
+    \lettrine[lines=2]{\thestep}{}% <--- Verhindert den Key-Fehler
+}
+\makeatother
+
+
+
+
+
+
+% Optionale Konfigurationen für xcookybook
 
 \begin{document}
-\input{titlepage}
-\customtableofcontents
-%\input{recipes/carbonara}
-\input{recipes/Roggenschrotbrot}
-%\input{recipes/cheeseburgerbowl}
-%\input{recipes/keema}
-%\input{recipes/padkrapao}
-%\input{recipes/ragu}
-%\input{recipes/redbellpepperpasta}
-%\input{recipes/soboro}
+
+\title{Meine Rezepte}
+\author{}
+\date{\today}
+\maketitle
+
+\tableofcontents
+\clearpage
+
+\include{recipes/Roggenschrotbrot}
 \end{document}
