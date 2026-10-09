@@ -9,7 +9,14 @@
 \makeatletter
 \renewcommand{\step}{%
     \stepcounter{step}%
-    \lettrine[lines=2]{\thestep}{}% <--- Verhindert den Key-Fehler
+    \ifnum\value{step}=1
+        \par\vspace{0.5em} % Zeilenumbruch und Abstand direkt nach "Preparation"
+    \else
+        \par\vspace{0.8em} % Abstand zwischen den folgenden Schritten
+    \fi
+    \noindent
+    \hangindent=1.5em\hangafter=1 % Sauberes Einrücken bei mehrzeiligen Schritten
+    \parbox[t]{1.5em}{\textbf{\thestep.}}% Nummerierung auf der Grundlinie
 }
 \makeatother
 
