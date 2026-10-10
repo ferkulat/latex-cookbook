@@ -1,62 +1,44 @@
 % =======================================================
 % REZEPT 1: Beispiel mit Bild-Platzhalter
 % =======================================================
-\begin{recipe}
-[
-    %preparationtime = {\unit[20]{Min.}},
-    bakingtime = {\unit[30]{Min.}},
-    %portion = {\unit[4]{Personen}},
-    calory = {ca. 8333 kcal},
-    %source = {Omas Geheimrezept}
-]
-{Roggenschrotbrot} % Rezeptname
+\section*{Roggenschrotbrot}
+\noindent\textsf{\small 1 Laib \textperiodcentered\ Dauer: ca. 3,5 Std. \hfill Brot \& Gebäck}
+\vspace{1em}
 
-    % Optionale Einleitung oder Beschreibung zum Rezept
-    Nach einem Rezept von Lutz Gei"sler. Angepasst an 3 Backformen 30cm von Zenker.
+% --- 1. ZUTATENLISTE (Über die volle Breite) ---
+\begin{zutatenboxfull}
+    % p{3cm} definiert eine feste Spaltenbreite für die Mengen, damit alles untereinander steht
+    \begin{tabular}{@{} p{2.5cm} l @{}}
+        \multicolumn{2}{l}{\textbf{Brühstück:}} \\
+        \midrule
+        240,65\,g  & Schrot (Stufe 7.5) \\
+        721,95\,ml & Wasser (kochend) \\
+        48,13\,g   & Salz \\
+        \addlinespace[1.5em]
+        \multicolumn{2}{l}{\textbf{Hauptteig:}} \\
+        \midrule
+        1347,63\,g & Schrot (Stufe 7.5) \\
+        828,23\,g  & Schrot (Stufe 3) \\
+        1754,73\,ml& Wasser \\
+        84,23\,g   & Sauerteigstarter \\
+    \end{tabular}
+\end{zutatenboxfull}
 
-    % Zutatenliste
-        \ingredients{
-        &
-	\begin{tabular}[t]{@{}ll@{}}
-	\multicolumn{2}{l}{\textbf{Br"uhst"uck:}} \\
-            240.65\,g & Schrot (Stufe 7.5) \\
-            721.95\,ml & Wasser (kochend) \\
-            48.13\,g & Salz
-        \end{tabular} \\
-        \addlinespace
-        &
-	\begin{tabular}[t]{@{}ll@{}}
-	    \multicolumn{2}{l}{\textbf{Hauptteig:}} \\
-            1347.63\,g & Schrot (Stufe 7.5) \\
-            828.23\,g & Schrot (Stufe 3) \\
-            1754.73\,ml & Wasser \\
-            84.23\,g & Sauerteigstarter \\
-        \end{tabular} \\
-    }
+\vspace{1.5em}
+\noindent\textbf{Zubereitung:}
+\vspace{0.5em}
 
-
-
-    % Zubereitungsschritte
-    \preparation{
-        \step Zutaten f"ur das Br"uhst"uck zusammen vermischen.
-        \step Folie direkt auf die Oberfl"ache der Masse legen und 8-10 Stunden bei Raumtemperatur stehen lassen.
-        \step Sauerteigstarter aus dem K"uhlschrank nehmen und 1:1:1 f"uttern und (3-4 Stunden) warten bis er sich verdoppelt hat.
-        \step Sauerteigstarter nochmal 1:1:1 f"uttern und (3-4 Stunden) warten bis er sich verdoppelt hat.
-        \step Sauerteigstarter in eine gro"se Sch"ussel mit der Wassermenge f"ur den Hauptteig vermischen.
-        \step Br"uhst"uck dazugeben und vermischen.
-        \step Die restlichen Zutaten dazugeben und alles vermischen bis alles homogen ist und auf die Backformen aufteilen.
-        \step Die Formen abdecken und 24 Stunden bei 18-20 °C gehen lassen.
-        \step Backblech auf unterste Schiene in den Ofen einschieben und auf 250 °C vorheizen.
-        \step Kastenformen mit Teig auf Gitter direckt "uber Backblech einschieben und 100\,ml kochendes Wasser auf das Blech kippen und Ofen schliessen
-        \step Nach 15 Minuten den Ofen zum Dampfablassen "offnen und Backblech herausnehmen.
-        \step Temperatur auf 200 °C stellen.
-        \step Nach weiteren 65 Minuten Stechthermometer in Brote und Brote weiter backen bis Kerntemperatur mindestens 98 °C erreicht.
-        \step Brote aus Formen nehmen und 10 Minuten weiter backen.
-        \step Ofen ausmachen. Klappe leicht "offnen und Brote mind. 30 Minuten im Ofen lassen.
-    }
+% --- 2. ZUBEREITUNGSSCHRITTE (Über die volle Breite) ---
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=1.8em, itemsep=1em, topsep=0pt]
+    \item \textbf{Brühstück:} Zutaten für das Brühstück mit kochendem Wasser übergießen und klumpenfrei verrühren. Folie direkt auf die Oberfläche der Masse legen und für 8--10 Stunden verquellen lassen.
     
-    % Optionale Notiz oder Tipp am Ende des Rezepts
-    \hint{Schmeckt besonders gut, wenn er noch leicht warm ist und mit einer Kugel Vanilleeis serviert wird!}
-
-\end{recipe}
-
+    \item \textbf{Sauerteigstarter Füttern 1:} Sauerteigstarter aus dem Kühlschrank nehmen und 1:1:1 füttern und (3--4 Stunden) warten, bis er sich verdoppelt hat. Sauerteigstarter nochmal 1:1:1 füttern und (3--4 Stunden) warten, bis er sich verdoppelt hat.
+    
+    \item \textbf{Sauerteigstarter Füttern 2:} Sauerteigstarter nochmal 1:1:1 füttern und (3--4 Stunden) warten, bis er sich verdoppelt hat.
+    
+    \item \textbf{Hauptteig:} Sauerteigstarter in einer großen Schüssel mit der Wassermenge für den Hauptteig vermischen. Die restlichen Zutaten dazugeben und alles vermischen, bis alles homogen ist, und auf die Backformen aufteilen.
+    
+    \item \textbf{Gare:} Die Formen abdecken und 24 Stunden bei 18--20\,°C gehen lassen.
+    
+    \item \textbf{Backen:} Backblech auf unterste Schiene in den Ofen einschieben und auf 250\,°C vorheizen. Kastenformen mit Teig auf Gitter direkt über dem Backblech einschieben, 100\,ml kochendes Wasser auf das Blech kippen und den Ofen sofort schließen. Nach 15 Minuten den Ofen zum Dampfablassen öffnen und das Backblech herausnehmen. Temperatur auf 200\,°C stellen. Nach weiteren 65 Minuten ein Stechthermometer in die Brote stecken und weiterbacken, bis die Kerntemperatur mindestens 98\,°C erreicht. Brote aus den Formen nehmen und 10 Minuten weiterbacken. Ofen ausmachen, die Klappe leicht öffnen und die Brote mindestens 30 Minuten im Ofen abkühlen lassen.
+\end{enumerate}

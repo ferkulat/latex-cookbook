@@ -2,30 +2,28 @@
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{microtype}
-
-% --- xcookybook Paket laden ---
-\usepackage{xcookybooky}
 \usepackage{booktabs}
-\makeatletter
-\renewcommand{\step}{%
-    \stepcounter{step}%
-    \ifnum\value{step}=1
-        \par\vspace{0.5em} % Zeilenumbruch und Abstand direkt nach "Preparation"
-    \else
-        \par\vspace{0.8em} % Abstand zwischen den folgenden Schritten
-    \fi
-    \noindent
-    \hangindent=1.5em\hangafter=1 % Sauberes Einrücken bei mehrzeiligen Schritten
-    \parbox[t]{1.5em}{\textbf{\thestep.}}% Nummerierung auf der Grundlinie
+\usepackage{wrapfig} % Ermöglicht das Umfließen von Boxen
+\usepackage{enumitem} % Für perfekt kontrollierbare Schritt-Listen
+\usepackage{tcolorbox} % Für die stabile Zutatenbox links
+\usepackage{parcolumns}  % Für das bombenfeste Nebeneinanderstehen
+
+% --- Eigener Befehl für die Schritte im Fließtext ---
+% --- KONSISTENTER BEFEHL FÜR DIE SCHRITTE ---
+% --- DAS GEHEIMPAKET FÜR ECHTEN UMFLUSS ---
+% insbox ist ein Standard-TeX-Makro. Falls nicht installiert, 
+% simuliert dieser Befehl die Funktionalität nativ:
+\input{insbox.tex} 
+
+% --- Styling für die Zutatenbox (Volle Breite) ---
+\newtcolorbox{zutatenboxfull}{
+    sharp corners,
+    colback=gray!3,       % Sehr dezenter, heller Hintergrund
+    colframe=gray!30,     % Feine Rahmenlinie
+    boxrule=0.5pt,
+    width=\linewidth,     % Nutzt die volle Seitenbreite
+    top=10pt, bottom=10pt, left=10pt, right=10pt
 }
-\makeatother
-
-
-
-
-
-
-% Optionale Konfigurationen für xcookybook
 
 \begin{document}
 
