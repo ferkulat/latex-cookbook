@@ -15,6 +15,16 @@
 % simuliert dieser Befehl die Funktionalität nativ:
 \input{insbox.tex} 
 
+\usepackage[pdftex, hidelinks]{hyperref}
+
+% --- KORRIGIERTES TIMELINE-MAKRO (ALS COMPILER-SICHERER EINZEILER) ---
+\newcommand{\timelineField}[2]{%
+    \Form{\TextField[
+        name=#1, width=3.5em, align=2, readonly=true,
+        calculate={var e=this.getField("wunschEndzeit").value; if(e&&e.indexOf(":")!==-1){var p=e.split(":"); var eH=parseInt(p[0],10); var eM=parseInt(p[1],10); if(!isNaN(eH)&&!isNaN(eM)){var t=eH*60+eM-#2; while(t<0){t+=1440;} var rH=Math.floor(t/60); var cH=rH-(Math.floor(rH/24)*24); var cM=t-(rH*60); var sH=(cH<10)?"0"+cH:cH; var sM=(cM<10)?"0"+cM:cM; event.value=sH+":"+sM;}}else{event.value="--:--";}}
+    ]{}}%
+}
+
 % --- Styling für die Zutatenbox (Volle Breite) ---
 \newtcolorbox{zutatenboxfull}{
     sharp corners,
@@ -24,7 +34,7 @@
     width=\linewidth,     % Nutzt die volle Seitenbreite
     top=10pt, bottom=10pt, left=10pt, right=10pt
 }
-
+\usepackage{auxhook}
 \begin{document}
 
 \title{Meine Rezepte}

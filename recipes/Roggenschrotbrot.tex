@@ -51,3 +51,38 @@
     
     \item \textbf{Backen:} Backblech auf unterste Schiene in den Ofen einschieben und auf 250\,°C vorheizen. Kastenformen mit Teig auf Gitter direkt über dem Backblech einschieben, 100\,ml kochendes Wasser auf das Blech kippen und den Ofen sofort schließen. Nach 15 Minuten den Ofen zum Dampfablassen öffnen und das Backblech herausnehmen. Temperatur auf 200\,°C stellen. Nach weiteren 65 Minuten ein Stechthermometer in die Brote stecken und weiterbacken, bis die Kerntemperatur mindestens 98\,°C erreicht. Brote aus den Formen nehmen und 10 Minuten weiterbacken. Ofen ausmachen, die Klappe leicht öffnen und die Brote mindestens 30 Minuten im Ofen abkühlen lassen.
 \end{enumerate}
+
+\vspace{2em}
+
+% --- 3. INTERAKTIVER TIMELINE-PLANER ---
+\begin{tcolorbox}[colback=yellow!5, colframe=yellow!40, boxrule=0.5pt, sharp corners]
+    \noindent\textbf{Interaktiver Zeitplaner:} \\
+    Trage hier deine gewünschte \textbf{Endzeit} ein (Format \texttt{HH:MM}, z.B. \texttt{18:00}) $\rightarrow$ 
+    \Form{\TextField[
+        name=wunschEndzeit,
+        width=4em,
+        value={18:00}, 
+        align=1 
+    ]{}} Uhr
+\end{tcolorbox}
+
+\vspace{1em}
+\noindent\textbf{Berechneter Ablaufplan:}
+\vspace{0.5em}
+
+\noindent
+\begin{tabular}{r @{\hspace{1em}} c @{\hspace{1em}} l}
+    \timelineField{step1}{1625} & \textcolor{gray}{\textbullet} & \textbf{Vortag:} Brühstück ansetzen \& Sauerteigstarter füttern 1 \\
+    \vphantom{M} & \textcolor{gray}{|} & \\
+    \timelineField{step2}{1025} & \textcolor{gray}{\textbullet} & Sauerteigstarter füttern 2 \\
+    \vphantom{M} & \textcolor{gray}{|} & \\
+    \timelineField{step3}{785}  & \textcolor{gray}{\textbullet} & Hauptteig mischen, kneten und in Formen füllen \\
+    \vphantom{M} & \textcolor{gray}{|} & \\
+    \timelineField{step4}{770}  & \textcolor{gray}{\textbullet} & \textbf{Lange Gare:} Formen abdecken und 24 Std. reifen lassen \\
+    \vphantom{M} & \textcolor{gray}{|} & \\
+    \timelineField{step5}{90}   & \textcolor{gray}{\textbullet} & \textbf{Backofen vorheizen:} Ofen mit Blech auf 250\,°C bringen \\
+    \vphantom{M} & \textcolor{gray}{|} & \\
+    \timelineField{step6}{75}   & \textcolor{gray}{\textbullet} & \textbf{Einschießen:} Brote mit Dampf backen (Temperatur fallend) \\
+    \vphantom{M} & \textcolor{gray}{|} & \\
+    \timelineField{step7}{0}    & \textcolor{gray}{\textbullet} & \textbf{Fertig!:} Brote aus dem Ofen nehmen und abkühlen lassen. \\
+\end{tabular}
