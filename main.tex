@@ -17,11 +17,11 @@
 
 \usepackage[pdftex, hidelinks]{hyperref}
 
-% --- KORRIGIERTES TIMELINE-MAKRO (ALS COMPILER-SICHERER EINZEILER) ---
-\newcommand{\timelineField}[2]{%
+% --- KORRIGIERTES TIMELINE-MAKRO MIT DATUMSBERECHNUNG (COMPILER-SICHER) ---
+\newcommand{\timelineField}[2]{% <--- Jetzt explizit mit [2] Variablen deklariert!
     \Form{\TextField[
-        name=#1, width=3.5em, align=2, readonly=true,
-        calculate={var e=this.getField("wunschEndzeit").value; if(e&&e.indexOf(":")!==-1){var p=e.split(":"); var eH=parseInt(p[0],10); var eM=parseInt(p[1],10); if(!isNaN(eH)&&!isNaN(eM)){var t=eH*60+eM-#2; while(t<0){t+=1440;} var rH=Math.floor(t/60); var cH=rH-(Math.floor(rH/24)*24); var cM=t-(rH*60); var sH=(cH<10)?"0"+cH:cH; var sM=(cM<10)?"0"+cM:cM; event.value=sH+":"+sM;}}else{event.value="--:--";}}
+        name=#1, width=7.5em, align=1, readonly=true,
+        calculate={var eT=this.getField("wunschEndzeit").value; var eD=this.getField("wunschDatum").value; if(eT&&eD&&eT.indexOf(":")!==-1){var p=eT.split(":"); var eH=parseInt(p.shift(),10); var eM=parseInt(p.shift(),10); var dParts=eD.split("."); var dD=parseInt(dParts.shift(),10); var dM=parseInt(dParts.shift(),10)-1; var dY=parseInt(dParts.shift(),10); if(!isNaN(eH)&&!isNaN(eM)&&!isNaN(dD)&&!isNaN(dM)&&!isNaN(dY)){var date=new Date(dY,dM,dD,eH,eM,0,0); date.setMinutes(date.getMinutes()-#2); var curD=date.getDate(); var curM=date.getMonth()+1; var cH=date.getHours(); var cM=date.getMinutes(); var strDate=((curD<10)?"0"+curD:curD)+"."+((curM<10)?"0"+curM:curM)+"."; var strTime=((cH<10)?"0"+cH:cH)+":"+((cM<10)?"0"+cM:cM); event.value=strDate+" "+strTime;}}else{event.value="--.--. --:--";}}
     ]{}}%
 }
 
