@@ -3,29 +3,18 @@
 \usepackage[ngerman]{babel}
 \usepackage{microtype}
 \usepackage{booktabs}
-\usepackage{wrapfig} % Ermöglicht das Umfließen von Boxen
-\usepackage{enumitem} % Für perfekt kontrollierbare Schritt-Listen
-\usepackage{tcolorbox} % Für die stabile Zutatenbox links
-\usepackage{parcolumns}  % Für das bombenfeste Nebeneinanderstehen
-
-% --- Eigener Befehl für die Schritte im Fließtext ---
-% --- KONSISTENTER BEFEHL FÜR DIE SCHRITTE ---
-% --- DAS GEHEIMPAKET FÜR ECHTEN UMFLUSS ---
-% insbox ist ein Standard-TeX-Makro. Falls nicht installiert, 
-% simuliert dieser Befehl die Funktionalität nativ:
-\input{insbox.tex} 
+\usepackage{enumitem}
+\usepackage{tcolorbox}
 
 \usepackage[pdftex, hidelinks]{hyperref}
 
-% --- KORRIGIERTES TIMELINE-MAKRO MIT DATUMSBERECHNUNG (COMPILER-SICHER) ---
-\newcommand{\timelineField}[2]{% <--- Jetzt explizit mit [2] Variablen deklariert!
+\newcommand{\timelineField}[2]{%
     \Form{\TextField[
         name=#1, width=7.5em, align=1, readonly=true,
         calculate={var eT=this.getField("wunschEndzeit").value; var eD=this.getField("wunschDatum").value; if(eT&&eD&&eT.indexOf(":")!==-1){var p=eT.split(":"); var eH=parseInt(p.shift(),10); var eM=parseInt(p.shift(),10); var dParts=eD.split("."); var dD=parseInt(dParts.shift(),10); var dM=parseInt(dParts.shift(),10)-1; var dY=parseInt(dParts.shift(),10); if(!isNaN(eH)&&!isNaN(eM)&&!isNaN(dD)&&!isNaN(dM)&&!isNaN(dY)){var date=new Date(dY,dM,dD,eH,eM,0,0); date.setMinutes(date.getMinutes()-#2); var curD=date.getDate(); var curM=date.getMonth()+1; var cH=date.getHours(); var cM=date.getMinutes(); var strDate=((curD<10)?"0"+curD:curD)+"."+((curM<10)?"0"+curM:curM)+"."; var strTime=((cH<10)?"0"+cH:cH)+":"+((cM<10)?"0"+cM:cM); event.value=strDate+" "+strTime;}}else{event.value="--.--. --:--";}}
     ]{}}%
 }
 
-% --- Styling für die Zutatenbox (Volle Breite) ---
 \newtcolorbox{zutatenboxfull}{
     sharp corners,
     colback=gray!3,       % Sehr dezenter, heller Hintergrund
