@@ -7,21 +7,30 @@
 
 % --- 1. ZUTATENLISTE (Über die volle Breite) ---
 \begin{zutatenboxfull}
-    % p{3cm} definiert eine feste Spaltenbreite für die Mengen, damit alles untereinander steht
-    \begin{tabular}{@{} p{2.5cm} l @{}}
-        \multicolumn{2}{l}{\textbf{Brühstück:}} \\
-        \midrule
-        240,65\,g  & Schrot (Stufe 7.5) \\
-        721,95\,ml & Wasser (kochend) \\
-        48,13\,g   & Salz \\
-        \addlinespace[1.5em]
-        \multicolumn{2}{l}{\textbf{Hauptteig:}} \\
-        \midrule
-        1347,63\,g & Schrot (Stufe 7.5) \\
-        828,23\,g  & Schrot (Stufe 3) \\
-        1754,73\,ml& Wasser \\
-        84,23\,g   & Sauerteigstarter \\
-    \end{tabular}
+    \noindent
+    % --- Linke Spalte: Brühstück ---
+    \begin{minipage}[t]{0.45\linewidth}
+        \begin{tabular}{@{} p{2.2cm} l @{}}
+            \multicolumn{2}{l}{\textbf{Brühstück:}} \\
+            \midrule
+            240,65\,g  & Schrot (Stufe 7.5) \\
+            721,95\,ml & Wasser (kochend) \\
+            48,13\,g   & Salz \\
+            & % Unsichtbare Leerzeile zur Höhenangleichung an den Hauptteig
+        \end{tabular}
+    \end{minipage}%
+    \hfill
+    % --- Rechte Spalte: Hauptteig ---
+    \begin{minipage}[t]{0.45\linewidth}
+        \begin{tabular}{@{} p{2.2cm} l @{}}
+            \multicolumn{2}{l}{\textbf{Hauptteig:}} \\
+            \midrule
+            1347,63\,g & Schrot (Stufe 7.5) \\
+            828,23\,g  & Schrot (Stufe 3) \\
+            1754,73\,ml& Wasser \\
+            84,23\,g   & Sauerteigstarter \\
+        \end{tabular}
+    \end{minipage}
 \end{zutatenboxfull}
 
 \vspace{1.5em}
